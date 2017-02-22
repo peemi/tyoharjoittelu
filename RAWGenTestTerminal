@@ -1,0 +1,144 @@
+Begin processing the 66th record. Run 1, Event 66, LumiSection 1 at 13-Feb-2017 14:00:23.687 CET
+Begin processing the 67th record. Run 1, Event 67, LumiSection 1 at 13-Feb-2017 14:00:28.009 CET
+Begin processing the 68th record. Run 1, Event 68, LumiSection 1 at 13-Feb-2017 14:00:34.014 CET
+1********* PYSTAT:  Statistics on Number of Events and Cross-sections *********
+
+ ==============================================================================
+ I                                  I                            I            I
+ I            Subprocess            I      Number of points      I    Sigma   I
+ I                                  I                            I            I
+ I----------------------------------I----------------------------I    (mb)    I
+ I                                  I                            I            I
+ I N:o Type                         I    Generated         Tried I            I
+ I                                  I                            I            I
+ ==============================================================================
+ I                                  I                            I            I
+ I   0 All included subprocesses    I           68           262 I  9.930D-06 I
+ I   1 f + fbar -> gamma*/Z0        I           68           262 I  9.930D-06 I
+ I                                  I                            I            I
+ ==============================================================================
+
+ ********* Total number of errors, excluding junctions =        0 *************
+ ********* Total number of errors, including junctions =        0 *************
+ ********* Total number of warnings =                           0 *************
+ ********* Fraction of events that fail fragmentation cuts =  0.00000 *********
+
+
+**********************************************************************
+    PRETAUOLA_05 - summary: 
+    TAU+ force to decay into:  all decay modes              
+    TAU- force to decay into:  all decay modes              
+    Nev =        68 N(taus) =        20 ADDITIONAL BR =   1.000000
+
+
+
+
+ ***************************************************************************
+ *                         *****TAUOLA UNIVERSAL INTERFACE: ******         *
+ *                         *****VERSION 1.21, September2005 ******         *
+ *                         **AUTHORS: P. Golonka, B. Kersevan, ***         *
+ *                         **T. Pierzchala, E. Richter-Was, ******         *
+ *                         ****** Z. Was, M. Worek ***************         *
+ *                         **USEFUL DISCUSSIONS, IN PARTICULAR ***         *
+ *                         *WITH C. Biscarat and S. Slabospitsky**         *
+ *                         ****** are warmly acknowledged ********         *
+ *                         ****** END OF MODULE OPERATION ********         *
+ ***************************************************************************
+
+1********* PYSTAT:  Statistics on Number of Events and Cross-sections *********
+
+ ==============================================================================
+ I                                  I                            I            I
+ I            Subprocess            I      Number of points      I    Sigma   I
+ I                                  I                            I            I
+ I----------------------------------I----------------------------I    (mb)    I
+ I                                  I                            I            I
+ I N:o Type                         I    Generated         Tried I            I
+ I                                  I                            I            I
+ ==============================================================================
+ I                                  I                            I            I
+ I   0 All included subprocesses    I           68           262 I  9.930D-06 I
+ I   1 f + fbar -> gamma*/Z0        I           68           262 I  9.930D-06 I
+ I                                  I                            I            I
+ ==============================================================================
+
+ ********* Total number of errors, excluding junctions =        0 *************
+ ********* Total number of errors, including junctions =        0 *************
+ ********* Total number of warnings =                           0 *************
+ ********* Fraction of events that fail fragmentation cuts =  0.00000 *********
+
+
+**********************************************************************
+    PRETAUOLA_05 - summary: 
+    TAU+ force to decay into:  all decay modes              
+    TAU- force to decay into:  all decay modes              
+    Nev =        68 N(taus) =        20 ADDITIONAL BR =   1.000000
+
+
+
+
+ ***************************************************************************
+ *                         *****TAUOLA UNIVERSAL INTERFACE: ******         *
+ *                         *****VERSION 1.21, September2005 ******         *
+ *                         **AUTHORS: P. Golonka, B. Kersevan, ***         *
+ *                         **T. Pierzchala, E. Richter-Was, ******         *
+ *                         ****** Z. Was, M. Worek ***************         *
+ *                         **USEFUL DISCUSSIONS, IN PARTICULAR ***         *
+ *                         *WITH C. Biscarat and S. Slabospitsky**         *
+ *                         ****** are warmly acknowledged ********         *
+ *                         ****** END OF MODULE OPERATION ********         *
+ ***************************************************************************
+
+
+------------------------------------
+GenXsecAnalyzer:
+------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+Overall cross-section summary:
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Process		xsec_before [pb]		passed	nposw	nnegw	triednposw	nnegw 	xsec_match [pb]			accepted [%]	 event_eff [%]
+0		9.930e+03 +/- -1.000e+00		68	68	0	68	68	0	9.930e+03 +/- -1.000e+00		100.0 +/- 0.0100.0 +/- 0.0
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+Total		9.930e+03 +/- -1.000e+00		68	68	0	68	68	0	1.316e-312 +/- 6.952e-310		0.0 +/- -100.0100.0 +/- 0.0
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Before matching: total cross section = 9.930e+03 +- -1.000e+00 pb
+After matching: total cross section = 1.316e-312 +- 6.952e-310 pb
+Filter efficiency (taking into account weights)= (68) / (68) = 1.000e+00 +- 0.000e+00
+Filter efficiency (event-level)= (68) / (68) = 1.000e+00 +- 0.000e+00
+After filter: final cross section = 0.000e+00 +- -nan pb
+TimeReport> Time report complete in 1358.27 seconds
+ Time Summary: 
+ - Min event:   3.29608
+ - Max event:   51.1228
+ - Avg event:   19.9745
+ - Total job:   1358.27
+ CPU Summary: 
+ - Min event:   3.13
+ - Max event:   50.872
+ - Avg event:   18.698
+ - Total job:   1335.53
+ - Total event: 1271.47
+
+
+=============================================
+
+MessageLogger Summary
+
+ type     category        sev    module        subroutine        count    total
+ ---- -------------------- -- ---------------- ----------------  -----    -----
+    1 GenXSecAnalyzer      -w GenXSecAnalyzer:                      12       12
+    2 TimeReport           -e AfterModEndJob                         1        1
+
+ type    category    Examples: run/evt        run/evt          run/evt
+ ---- -------------------- ---------------- ---------------- ----------------
+    1 GenXSecAnalyzer      PostEndRun       PostEndRun       PostEndRun
+    2 TimeReport           PostEndRun                        
+
+Severity    # Occurrences   Total Occurrences
+--------    -------------   -----------------
+Warning                12                  12
+Error                   1                   1
+[cms-opendata@localhost Gen]$ ls
+BTV-Summer11Leg-00013.root  START53_LV6A1  START53_LV6A1.db  configFile.py
+[cms-opendata@localhost Gen]$ nano BTV-Summer11Leg-00013.root 
+[cms-opendata@localhost Gen]$ 

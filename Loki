@@ -1,0 +1,4 @@
+170208 16:11:16 4493 Xrd: CheckErrorStatus: Server [eospublic-srv-b1.cern.ch:1094] declared: session not found(error code: 3011)
+4000001 events processed in 4759.54712296 seconds
+170208 16:16:31 4593 Xrd: XrdClientMessage::ReadRaw: Failed to read header (8 bytes).
+tähän erroriin saattoi jumahtaa katin esimerkki -1 tescasella

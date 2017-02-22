@@ -1,0 +1,473 @@
+niemi@niemi-desktop:~$ nano ~/.bashrc
+niemi@niemi-desktop:~$ git clone https://github.com/cooperative-computing-lab/cctools cctools-source
+The program 'git' is currently not installed. You can install it by typing:
+sudo apt install git
+niemi@niemi-desktop:~$ sudo apt-get install git
+[sudo] password for niemi: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  linux-headers-4.4.0-31 linux-headers-4.4.0-31-generic
+  linux-image-4.4.0-31-generic
+  linux-image-extra-4.4.0-31-generic
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  git-man liberror-perl                              
+Suggested packages:                                   
+  git-daemon-run | git-daemon-sysvinit git-doc git-el git-email
+  git-gui gitk gitweb git-arch git-cvs git-mediawiki git-svn
+The following NEW packages will be installed:
+  git git-man liberror-perl
+0 upgraded, 3 newly installed, 0 to remove and 169 not upgraded.
+Need to get 3'760 kB of archives.
+After this operation, 25.6 MB of additional disk space will be used.
+Do you want to continue? [Y/n] 
+Get:1 http://ch.archive.ubuntu.com/ubuntu xenial/main amd64 liberror-perl all 0.17-1.2 [19.6 kB]
+Get:2 http://ch.archive.ubuntu.com/ubuntu xenial/main amd64 git-man all 1:2.7.4-0ubuntu1 [735 kB]
+Get:3 http://ch.archive.ubuntu.com/ubuntu xenial/main amd64 git amd64 1:2.7.4-0ubuntu1 [3'006 kB]
+Fetched 3'760 kB in 0s (26.3 MB/s)
+Selecting previously unselected package liberror-perl.
+(Reading database ... 223793 files and directories currently installed.)
+Preparing to unpack .../liberror-perl_0.17-1.2_all.deb ...
+Unpacking liberror-perl (0.17-1.2) ...
+Selecting previously unselected package git-man.
+Preparing to unpack .../git-man_1%3a2.7.4-0ubuntu1_all.deb ...
+Unpacking git-man (1:2.7.4-0ubuntu1) ...
+Selecting previously unselected package git.
+Preparing to unpack .../git_1%3a2.7.4-0ubuntu1_amd64.deb ...
+Unpacking git (1:2.7.4-0ubuntu1) ...
+Processing triggers for man-db (2.7.5-1) ...
+Setting up liberror-perl (0.17-1.2) ...
+Setting up git-man (1:2.7.4-0ubuntu1) ...
+Setting up git (1:2.7.4-0ubuntu1) ...
+niemi@niemi-desktop:~$ git clone https://github.com/cooperative-computing-lab/cctools cctools-source
+Cloning into 'cctools-source'...
+remote: Counting objects: 55250, done.
+remote: Compressing objects: 100% (93/93), done.
+remote: Total 55250 (delta 38), reused 2 (delta 2), pack-reused 55154
+Receiving objects: 100% (55250/55250), 44.54 MiB | 5.20 MiB/s, done.
+Resolving deltas: 100% (32685/32685), done.
+Checking connectivity... done.
+niemi@niemi-desktop:~$ cd cctools-source
+niemi@niemi-desktop:~/cctools-source$ ./configure
+Linux niemi-desktop 4.4.0-62-generic #83-Ubuntu SMP Wed Jan 18 14:10:15 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+checking for package compatibility...
+parrot IS supported on LINUX X86_64
+resource_monitor IS supported on LINUX
+checking for all the things I know how to build...
+package dttools found
+package batch_job found
+package makeflow found
+package work_queue found
+package apps found
+package sand found
+package allpairs found
+package wavefront found
+package ftp_lite found
+package parrot found
+package resource_monitor found
+package chirp found
+package weaver found
+package umbrella found
+package deltadb found
+package prune found
+package doc found
+checking for gcc.../usr/bin/gcc
+checking for g++...not found
+Sorry, I can't proceed without program g++
+niemi@niemi-desktop:~/cctools-source$ sudo apt-get install g++
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  linux-headers-4.4.0-31 linux-headers-4.4.0-31-generic
+  linux-image-4.4.0-31-generic
+  linux-image-extra-4.4.0-31-generic
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  g++-5 libstdc++-5-dev
+Suggested packages:
+  g++-multilib g++-5-multilib gcc-5-doc libstdc++6-5-dbg
+  libstdc++-5-doc
+The following NEW packages will be installed:
+  g++ g++-5 libstdc++-5-dev
+0 upgraded, 3 newly installed, 0 to remove and 169 not upgraded.
+Need to get 9'727 kB of archives.
+After this operation, 39.0 MB of additional disk space will be used.
+Do you want to continue? [Y/n] 
+Get:1 http://ch.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libstdc++-5-dev amd64 5.4.0-6ubuntu1~16.04.4 [1'426 kB]
+Get:2 http://ch.archive.ubuntu.com/ubuntu xenial-updates/main amd64 g++-5 amd64 5.4.0-6ubuntu1~16.04.4 [8'300 kB]
+Get:3 http://ch.archive.ubuntu.com/ubuntu xenial/main amd64 g++ amd64 4:5.3.1-1ubuntu1 [1'504 B]
+Fetched 9'727 kB in 0s (42.4 MB/s)
+Selecting previously unselected package libstdc++-5-dev:amd64.
+(Reading database ... 224607 files and directories currently installed.)
+Preparing to unpack .../libstdc++-5-dev_5.4.0-6ubuntu1~16.04.4_amd64.deb ...
+Unpacking libstdc++-5-dev:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+Selecting previously unselected package g++-5.
+Preparing to unpack .../g++-5_5.4.0-6ubuntu1~16.04.4_amd64.deb ...
+Unpacking g++-5 (5.4.0-6ubuntu1~16.04.4) ...
+Selecting previously unselected package g++.
+Preparing to unpack .../g++_4%3a5.3.1-1ubuntu1_amd64.deb ...
+Unpacking g++ (4:5.3.1-1ubuntu1) ...
+Processing triggers for man-db (2.7.5-1) ...
+Setting up libstdc++-5-dev:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+Setting up g++-5 (5.4.0-6ubuntu1~16.04.4) ...
+Setting up g++ (4:5.3.1-1ubuntu1) ...
+update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+niemi@niemi-desktop:~/cctools-source$ ./configure             
+Linux niemi-desktop 4.4.0-62-generic #83-Ubuntu SMP Wed Jan 18 14:10:15 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+checking for package compatibility...
+parrot IS supported on LINUX X86_64
+resource_monitor IS supported on LINUX
+checking for all the things I know how to build...
+package dttools found
+package batch_job found
+package makeflow found
+package work_queue found
+package apps found
+package sand found
+package allpairs found
+package wavefront found
+package ftp_lite found
+package parrot found
+package resource_monitor found
+package chirp found
+package weaver found
+package umbrella found
+package deltadb found
+package prune found
+package doc found
+checking for gcc.../usr/bin/gcc
+checking for g++.../usr/bin/g++
+checking for GNU make in several places...
+checking for make.../usr/bin/make
+checking if make is GNU make...yes
+checking if gcc supports -Wno-unused-parameter...yes
+checking if gcc supports -Wno-unknown-pragmas...yes
+checking if gcc supports -Wno-deprecated-declarations...yes
+checking if gcc supports -Wno-unused-const-variable...yes
+checking if ld supports the --as-needed flag...yes
+using a globus flavor of 'gcc64' (if this is wrong, use the --globus-flavor argument)
+*** skipping globus support
+*** skipping irods support
+checking for /usr/lib/libmysqlclient.a...no
+checking for /usr/lib/libmysqlclient.so...no
+checking for /usr/lib/libmysqlclient.a...no
+checking for /usr/lib/libmysqlclient.so...no
+*** skipping mysql support
+*** skipping xrootd support
+*** skipping cvmfs support
+checking for /usr/lib/libfuse.a...no
+checking for /usr/lib/libfuse.so...no
+checking for /usr/lib/x86_64-linux-gnu/libfuse.a...no
+checking for /usr/lib/x86_64-linux-gnu/libfuse.so...no
+checking for /lib64/libfuse.a...no
+checking for /lib64/libfuse.so...no
+checking for /lib64/libfuse.a...no
+checking for /lib64/libfuse.so...no
+*** skipping fuse support
+checking for /usr/lib/libreadline.so...no
+checking for /usr/lib/libreadline.a...no
+checking for /usr/lib/x86_64-linux-gnu/libreadline.so...no
+checking for /usr/lib/x86_64-linux-gnu/libreadline.a...no
+*** skipping readline...
+checking for /usr/bin/perl...yes
+perl version is 5.22.1
+checking for /usr/bin/python2...yes
+python version is 2.7.12
+checking for /usr/include/python2.7/Python.h...no
+*** skipping python bindings support
+python version is suitable for umbrella
+python version is suitable for prune
+python version is suitable for weaver
+checking for /usr/bin/python3...yes
+checking for /usr/bin/2to3...yes
+python3 version is 3.5.2
+checking for /usr/include/python3.5m/Python.h...no
+*** skipping python3 support
+checking for /usr/bin/swig...no
+checking for swig...not found
+*** skipping swig bindings for work queue
+checking for /usr/lib/libresolv.so...no
+checking for /usr/lib/libresolv.a...no
+checking for /usr/lib/x86_64-linux-gnu/libresolv.so...yes
+checking for /usr/lib/libsocket.so...no
+checking for /usr/lib/libsocket.a...no
+checking for /usr/lib/x86_64-linux-gnu/libsocket.so...no
+checking for /usr/lib/x86_64-linux-gnu/libsocket.a...no
+checking for /usr/lib/libnsl.so...no
+checking for /usr/lib/libnsl.a...no
+checking for /usr/lib/x86_64-linux-gnu/libnsl.so...yes
+checking for /usr/lib/libz.so...no
+checking for /usr/lib/libz.a...no
+checking for /usr/lib/x86_64-linux-gnu/libz.so...no
+checking for /usr/lib/x86_64-linux-gnu/libz.a...no
+*** Sorry, I couldn't find zlib in /usr
+*** Check --with-zlib-path and try again.
+niemi@niemi-desktop:~/cctools-source$ --with-zlib-path and try again
+--with-zlib-path: command not found
+niemi@niemi-desktop:~/cctools-source$ sudo apt-get install zlib
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package zlib
+niemi@niemi-desktop:~/cctools-source$ ^C
+niemi@niemi-desktop:~/cctools-source$ sudo apt-get build-dep python2.7
+Reading package lists... Done
+E: You must put some 'source' URIs in your sources.list
+niemi@niemi-desktop:~/cctools-source$ sudo apt-get install pyt 
+Display all 4831 possibilities? (y or n)
+niemi@niemi-desktop:~/cctools-source$ sudo apt-get install python 
+Display all 4821 possibilities? (y or n)
+niemi@niemi-desktop:~/cctools-source$ sudo apt-get install python2.7
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+python2.7 is already the newest version (2.7.12-1ubuntu0~16.04.1).
+The following packages were automatically installed and are no longer required:
+  linux-headers-4.4.0-31 linux-headers-4.4.0-31-generic
+  linux-image-4.4.0-31-generic
+  linux-image-extra-4.4.0-31-generic
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 169 not upgraded.
+niemi@niemi-desktop:~/cctools-source$ ./configure                Linux niemi-desktop 4.4.0-62-generic #83-Ubuntu SMP Wed Jan 18 14:10:15 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+checking for package compatibility...
+parrot IS supported on LINUX X86_64
+resource_monitor IS supported on LINUX
+checking for all the things I know how to build...
+package dttools found
+package batch_job found
+package makeflow found
+package work_queue found
+package apps found
+package sand found
+package allpairs found
+package wavefront found
+package ftp_lite found
+package parrot found
+package resource_monitor found
+package chirp found
+package weaver found
+package umbrella found
+package deltadb found
+package prune found
+package doc found
+checking for gcc.../usr/bin/gcc
+checking for g++.../usr/bin/g++
+checking for GNU make in several places...
+checking for make.../usr/bin/make
+checking if make is GNU make...yes
+checking if gcc supports -Wno-unused-parameter...yes
+checking if gcc supports -Wno-unknown-pragmas...yes
+checking if gcc supports -Wno-deprecated-declarations...yes
+checking if gcc supports -Wno-unused-const-variable...yes
+checking if ld supports the --as-needed flag...yes
+using a globus flavor of 'gcc64' (if this is wrong, use the --globus-flavor argument)
+*** skipping globus support
+*** skipping irods support
+checking for /usr/lib/libmysqlclient.a...no
+checking for /usr/lib/libmysqlclient.so...no
+checking for /usr/lib/libmysqlclient.a...no
+checking for /usr/lib/libmysqlclient.so...no
+*** skipping mysql support
+*** skipping xrootd support
+*** skipping cvmfs support
+checking for /usr/lib/libfuse.a...no
+checking for /usr/lib/libfuse.so...no
+checking for /usr/lib/x86_64-linux-gnu/libfuse.a...no
+checking for /usr/lib/x86_64-linux-gnu/libfuse.so...no
+checking for /lib64/libfuse.a...no
+checking for /lib64/libfuse.so...no
+checking for /lib64/libfuse.a...no
+checking for /lib64/libfuse.so...no
+*** skipping fuse support
+checking for /usr/lib/libreadline.so...no
+checking for /usr/lib/libreadline.a...no
+checking for /usr/lib/x86_64-linux-gnu/libreadline.so...no
+checking for /usr/lib/x86_64-linux-gnu/libreadline.a...no
+*** skipping readline...
+checking for /usr/bin/perl...yes
+perl version is 5.22.1
+checking for /usr/bin/python2...yes
+python version is 2.7.12
+checking for /usr/include/python2.7/Python.h...no
+*** skipping python bindings support
+python version is suitable for umbrella
+python version is suitable for prune
+python version is suitable for weaver
+checking for /usr/bin/python3...yes
+checking for /usr/bin/2to3...yes
+python3 version is 3.5.2
+checking for /usr/include/python3.5m/Python.h...no
+*** skipping python3 support
+checking for /usr/bin/swig...no
+checking for swig...not found
+*** skipping swig bindings for work queue
+checking for /usr/lib/libresolv.so...no
+checking for /usr/lib/libresolv.a...no
+checking for /usr/lib/x86_64-linux-gnu/libresolv.so...yes
+checking for /usr/lib/libsocket.so...no
+checking for /usr/lib/libsocket.a...no
+checking for /usr/lib/x86_64-linux-gnu/libsocket.so...no
+checking for /usr/lib/x86_64-linux-gnu/libsocket.a...no
+checking for /usr/lib/libnsl.so...no
+checking for /usr/lib/libnsl.a...no
+checking for /usr/lib/x86_64-linux-gnu/libnsl.so...yes
+checking for /usr/lib/libz.so...no
+checking for /usr/lib/libz.a...no
+checking for /usr/lib/x86_64-linux-gnu/libz.so...no
+checking for /usr/lib/x86_64-linux-gnu/libz.a...no
+*** Sorry, I couldn't find zlib in /usr
+*** Check --with-zlib-path and try again.
+niemi@niemi-desktop:~/cctools-source$ sudo apt-get install zlib  Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package zlib
+niemi@niemi-desktop:~/cctools-source$ sudo apt-get install zlib1g-dev 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  linux-headers-4.4.0-31 linux-headers-4.4.0-31-generic
+  linux-image-4.4.0-31-generic
+  linux-image-extra-4.4.0-31-generic
+Use 'sudo apt autoremove' to remove them.
+The following NEW packages will be installed:
+  zlib1g-dev
+0 upgraded, 1 newly installed, 0 to remove and 169 not upgraded.
+Need to get 168 kB of archives.
+After this operation, 426 kB of additional disk space will be used.
+Get:1 http://ch.archive.ubuntu.com/ubuntu xenial/main amd64 zlib1g-dev amd64 1:1.2.8.dfsg-2ubuntu4 [168 kB]
+Fetched 168 kB in 0s (3'416 kB/s)
+Selecting previously unselected package zlib1g-dev:amd64.
+(Reading database ... 225395 files and directories currently installed.)
+Preparing to unpack .../zlib1g-dev_1%3a1.2.8.dfsg-2ubuntu4_amd64.deb ...
+Unpacking zlib1g-dev:amd64 (1:1.2.8.dfsg-2ubuntu4) ...
+Processing triggers for man-db (2.7.5-1) ...
+Setting up zlib1g-dev:amd64 (1:1.2.8.dfsg-2ubuntu4) ...
+niemi@niemi-desktop:~/cctools-source$ ./configure              
+Linux niemi-desktop 4.4.0-62-generic #83-Ubuntu SMP Wed Jan 18 14:10:15 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+checking for package compatibility...
+parrot IS supported on LINUX X86_64
+resource_monitor IS supported on LINUX
+checking for all the things I know how to build...
+package dttools found
+package batch_job found
+package makeflow found
+package work_queue found
+package apps found
+package sand found
+package allpairs found
+package wavefront found
+package ftp_lite found
+package parrot found
+package resource_monitor found
+package chirp found
+package weaver found
+package umbrella found
+package deltadb found
+package prune found
+package doc found
+checking for gcc.../usr/bin/gcc
+checking for g++.../usr/bin/g++
+checking for GNU make in several places...
+checking for make.../usr/bin/make
+checking if make is GNU make...yes
+checking if gcc supports -Wno-unused-parameter...yes
+checking if gcc supports -Wno-unknown-pragmas...yes
+checking if gcc supports -Wno-deprecated-declarations...yes
+checking if gcc supports -Wno-unused-const-variable...yes
+checking if ld supports the --as-needed flag...yes
+using a globus flavor of 'gcc64' (if this is wrong, use the --globus-flavor argument)
+*** skipping globus support
+*** skipping irods support
+checking for /usr/lib/libmysqlclient.a...no
+checking for /usr/lib/libmysqlclient.so...no
+checking for /usr/lib/libmysqlclient.a...no
+checking for /usr/lib/libmysqlclient.so...no
+*** skipping mysql support
+*** skipping xrootd support
+*** skipping cvmfs support
+checking for /usr/lib/libfuse.a...no
+checking for /usr/lib/libfuse.so...no
+checking for /usr/lib/x86_64-linux-gnu/libfuse.a...no
+checking for /usr/lib/x86_64-linux-gnu/libfuse.so...no
+checking for /lib64/libfuse.a...no
+checking for /lib64/libfuse.so...no
+checking for /lib64/libfuse.a...no
+checking for /lib64/libfuse.so...no
+*** skipping fuse support
+checking for /usr/lib/libreadline.so...no
+checking for /usr/lib/libreadline.a...no
+checking for /usr/lib/x86_64-linux-gnu/libreadline.so...no
+checking for /usr/lib/x86_64-linux-gnu/libreadline.a...no
+*** skipping readline...
+checking for /usr/bin/perl...yes
+perl version is 5.22.1
+checking for /usr/bin/python2...yes
+python version is 2.7.12
+checking for /usr/include/python2.7/Python.h...no
+*** skipping python bindings support
+python version is suitable for umbrella
+python version is suitable for prune
+python version is suitable for weaver
+checking for /usr/bin/python3...yes
+checking for /usr/bin/2to3...yes
+python3 version is 3.5.2
+checking for /usr/include/python3.5m/Python.h...no
+*** skipping python3 support
+checking for /usr/bin/swig...no
+checking for swig...not found
+*** skipping swig bindings for work queue
+checking for /usr/lib/libresolv.so...no
+checking for /usr/lib/libresolv.a...no
+checking for /usr/lib/x86_64-linux-gnu/libresolv.so...yes
+checking for /usr/lib/libsocket.so...no
+checking for /usr/lib/libsocket.a...no
+checking for /usr/lib/x86_64-linux-gnu/libsocket.so...no
+checking for /usr/lib/x86_64-linux-gnu/libsocket.a...no
+checking for /usr/lib/libnsl.so...no
+checking for /usr/lib/libnsl.a...no
+checking for /usr/lib/x86_64-linux-gnu/libnsl.so...yes
+checking for /usr/lib/libz.so...no
+checking for /usr/lib/libz.a...no
+checking for /usr/lib/x86_64-linux-gnu/libz.so...yes
+checking for gmtime_r in /usr/include/time.h...yes
+checking for fdatasync in /usr/include/unistd.h...yes
+checking for isnan in /usr/include/math.h...yes
+checking for localtime_r in /usr/include/time.h...yes
+checking for localtime_s in /usr/include/time.h...no
+checking for localtime_s in /usr/include/x86_64-linux-gnu/time.h...no
+checking for openat in /usr/include/fcntl.h...yes
+checking for pread in /usr/include/unistd.h...yes
+checking for pread64 in /usr/include/unistd.h...yes
+checking for pwrite in /usr/include/unistd.h...yes
+checking for pwrite64 in /usr/include/unistd.h...yes
+checking for strchrnul in /usr/include/string.h...yes
+checking for strsignal in /usr/include/string.h...yes
+checking for usleep in /usr/include/unistd.h...yes
+checking for utime in /usr/include/utime.h...yes
+checking for utimensat in /usr/include/sys/stat.h...no
+checking for utimensat in /usr/include/x86_64-linux-gnu/sys/stat.h...yes
+checking for header attr/xattr.h...no
+checking for header fts.h...yes
+checking for header inttypes.h...yes
+checking for header stdint.h...yes
+checking for header sys/statfs.h...yes
+checking for header sys/statvfs.h...yes
+checking for header sys/xattr.h...yes
+checking for header syslog.h...yes
+checking for doxygen...not found
+*** not building API documentation
+checking for m4...not found
+*** not building html or man pages
+testing creation of 64-bit libparrot_helper.so...yes
+testing creation of 32-bit libparrot_helper.so...no
+Creating config.mk...
+
+To re-configure, type './configure.rerun'
+To build, type 'make'
+To build and install, type 'make install'
+
+niemi@niemi-desktop:~/cctools-source$ 

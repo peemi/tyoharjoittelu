@@ -1,0 +1,60 @@
+Ti 21.2. tulin 900
+selvitin input errorin
+
+seuraavaksi
+python encountered the error: <type 'exceptions.AttributeError'>
+'EDProducer' object has no attribute 'input'
+
+mahdollinen sijainti
+FWCore/Framework/interface/EDProducer.
+
+
+  PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\u\[\033[01;37m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+  
+  [cms-opendata@localhost Gen]$ env SHELL=/bin/sh gdb cmsRun
+gdb: Symbol `acs_map' has different size in shared object, consider re-linking
+GNU gdb (GDB) 7.6
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-unknown-linux-gnu".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from /cvmfs/cms.cern.ch/slc6_amd64_gcc472/cms/cmssw/CMSSW_5_3_32/bin/slc6_amd64_gcc472/cmsRun...(no debugging symbols found)...done.
+(gdb) 
+ send shutdown singal
+ 
+ opin debuggaamisesta tämän
+ 
+  gdb cmsRun
+
+catch throw
+
+run MyAnalysis _cfg.py 
+
+osoitteesta https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideTroubleShootingMore
+
+tutkin configFileGTMiMo.py
+
+(gdb) run configFileHLTGTandMiMo.py
+Starting program: /cvmfs/cms.cern.ch/slc6_amd64_gcc472/cms/cmssw/CMSSW_5_3_32/bin/slc6_amd64_gcc472/cmsRun configFileHLTGTandMiMo.py
+warning: File "/cvmfs/cms.cern.ch/slc6_amd64_gcc472/external/gcc/4.7.2-cms/lib64/libstdc++.so.6.0.17-gdb.py" auto-loading has been declined by your `auto-load safe-path' set to "$debugdir:$datadir/auto-load".
+To enable execution of this file add
+	add-auto-load-safe-path /cvmfs/cms.cern.ch/slc6_amd64_gcc472/external/gcc/4.7.2-cms/lib64/libstdc++.so.6.0.17-gdb.py
+line to your configuration file "/home/cms-opendata/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/cms-opendata/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+Catchpoint 1 (exception thrown), __cxxabiv1::__cxa_throw (obj=0x7ffff2a18d80, 
+    tinfo=0x7ffff72d6580 <typeinfo for boost::python::error_already_set>, 
+    dest=0x7ffff72be710 <boost::python::error_already_set::~error_already_set()>)
+    at ../../../../libstdc++-v3/libsupc++/eh_throw.cc:70
+70	../../../../libstdc++-v3/libsupc++/eh_throw.cc: No such file or directory.
+(gdb) 

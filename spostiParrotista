@@ -1,0 +1,7 @@
+Could not insert the VirtualBox Guest Additions disk image file into the virtual machine CMS-Open-Data-1.2.0, as the machine has no optical drives. Please add a drive using the storage page of the virtual machine settings window.
+
+
+
+Hello NimiX and NimiY,
+
+Could you help me with Parrot related problem? I'm running 'parrot_run virtualbox' but I get "Unknown application - VBox.sh"-error. From what I googled this might have something to do with guest additions, but I couldn't install them myself to cern image (unless they are preinstalled). Am I even supposed to use virtualbox fom parrot or should I use parrot from virtualbox? I know This might be something really trivial but if you have some advise what to do that would be great.

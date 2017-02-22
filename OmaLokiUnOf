@@ -1,0 +1,83 @@
+Loki ke aamupäivä 15.2
+
+ihan hukassa siitä mitä pitäisi tehdä seuraavaksi. Parrot on ihan hukassa että minkälainen työkalu se on. Y,,ärsin että sillä olisi voinut aukaista virtuaalikoneen mutta siinä ei välttämättä ole mitään järkeä. Sähköpostissa oli illalla keskustellut kati ja haiyan mutta en vieläkään ymmärrä tarpeeksi tajutakseni keskustelua. Yhtenä pointtina nimenomaan se että miksi haluaisin avata parrotilla VMmän? Hayanilla oli myös jotain sanottavaa riippuvuuksista
+
+(1) the CMS VM image CMS-Open-Data-1.2.0.ova; 
+(2) virtualbox or other hypervisors which can open CMS-Open-Data-1.2.0.ova;  
+(3) the dependencies of virtualbox.
+
+Under the scene, there are dependencies I did not directly touch, which should at least include:
+(1) the CVMFS server
+(2) the root data archive
+
+
+eliipä mitä seuraavksi? ei mitään tietoa. ei niin yhtään mit''n ei mit''n argh tänään ei aivot toimi. Pitäskö tehdä jotain suoritus h9ommaa niin sais kuitenkin asiat etenemään. Se vois olla hyvä. Ja sitte kirjoittaa lyhyt kuvaus siitä mitä on jo tehty ja millä spekseillä jne. Mutta syöm'ss' vois myös käydä. se olis hyvin hyödyllistä. lättyjä! ei. sinulla on pastaa. syö sitä. tee viikonloppuna uutta ja laita siihen sieniä ja enemmän kastiketta! riisiä ja kananmunia menee myös valtavasti. Näin sitä ajajtukset karkaa jatkuvasti. ei keskittymiskykyä. Voisit myös tehdä lista siitä mitä sinun pitää tehdä ja jakaa listan suoritettaviin taskeihin. Juup siinä voisiolla ideaa nyt samantien. Jos saisit hyvin tehttyä niin ehkä ehtisit jo tänään kauppaa)? Sitte häätyis kyllä jo lähteä kolmen maissa. No saa nähä mutta tarvisin näpäimistön ja kunnollisen repun. Näyttö olis myös mahtava asia.
+
+
+TASK lista
+
+VM ja host machine communication analyzation
+    reason: to make sure that we can provide this service (cern vm image) independently in the future as long as possible
+    
+    how to do this: this should be possible withsome wrapper softwatre that records all the communication that occurs between host and the guest. Parrot was one canditate,  but it probably wont work becouse ?????????????????????????????????????????????????????????????????. YOU MUST LEARN THIS! I could as someone google, Harri, Haiyan or someone else. This should be done  maybe today? Google firs and leave guestion around two or three.
+    
+Generating data and simulation and WHAAAAAAT?
+    Writing truli is reality check. OK Im doing this
+    reason: Just for practice and to increase my understandin of the workings and logig behind cernvm, open data, datacollectin prosessis and protocols, data analyzing and preservation. Not all in once but working with these condition is bound to help me forward.
+    
+    what Im actually doing: Im going to take rootlike file that I generated, that is littlebit like RAW data from CMS, and Iäm trying to make it look like AOD file. But becouse this is nor real RAW file we have to simule one more prosess (called HLT) to actually select the raw data from our collision simulation data. Normally this is already happened in datacollection.
+    
+    how to do thi:Im lost with this prosecc. 
+        -I guess I have to take the AOD generation configuration file and run it with this file. 
+        -BUT FIRST I have to do the data selection generation to this file. The HLT
+        -So at least I have to make this file the input file for the configuration.
+        -then I probably have to  change something else but what? If I was real data then (info from email from Kati) I would have to be united whit pileup data
+            -What is pileup data? Could it be that it is like binding time variadle to collision data?
+            anyway we dont have pileup data and since this is very informal test vi might not need it.
+            -Kati email. Uncommet/replace some line.
+                En tiedä menisikö se niin helpolla, ett korvaisi HLT-vaiheen konfiguraatiotedostosta rivin
+
+                process.load('SimGeneral.MixingModule.mix_2011_FinalDist_OOTPU_cfi')
+
+                rivillä
+
+                process.load('SimGeneral.MixingModule.mixNoPU_cfi')
+            -kokeillaan.
+            
+            
+            Ei toiminut ihan suoraan nuilla, mutta minä hyvin todennäköisesti vaan teen virheitä.  Kirjaa ylös koko proses komentoineen ja logiikoineen
+            
+            1.Step
+            
+            2.Step
+            in here we generate sim data
+            cd CMSSW_5_3_32/src/
+            mkdir Gen
+            cd Gen
+            wget http://opendata.cern.ch/record/3286/files/configFile.py
+            cmsenv
+            
+            ln -sf /cvmfs/cms-opendata-conddb.cern.ch/START53_LV6A1 START53_LV6A1
+            ln -sf /cvmfs/cms-opendata-conddb.cern.ch/START53_LV6A1.db START53_LV6A1.db
+            
+            with this change of GlobalTag in the configFile.py:
+            comment the following line
+            process.GlobalTag = GlobalTag(process.GlobalTag, 'START53_LV4::All', '')
+
+            and add these two lines:
+            process.GlobalTag.connect = cms.string('sqlite_file:/cvmfs/cms-opendata-conddb.cern.ch/START53_LV6A1.db')
+            process.GlobalTag.globaltag = cms.string('START53_LV6A1::All')
+            
+            cmsRun configFile.py
+            
+            
+ The Sources
+
+There are several types of Sources (see also SWGuideEDMParametersForModules#SWGuideInputSources) that may be of use for event generation procedure in CMSSW:
+
+    EmptySource - is a general-purpose Framework Source, that drives event loop and defines edm::Event principal, but does not add any branches to the edm::Event. Use case: any multi-purpose event generator, to generate full event, or particle guns. Example usage is already covered in the previous material, but we will revisit it later in this document.
+    LHESource - is a special-purpose Source that is a part of the GeneratorInterface/LHEInterface package. It reads externally generated parton record in the ASCII Les Houches format (LHE file), and in addition to creating event principal, it converts parton-level event to the edm::Event compatible format, that can be later recognized by subsequent event processing steps. It is used to process the output of ME generators, for example the MadGraph events. Use case: you plan to run your private production manually, i.e. the output of your ME generator is a local file on disk, and you plan to immediately process it through cmsRun to hadronize parton-level events and to run subsequent steps, as desired. We will show its usage later in this document. For detailed information please visit the dedicated SWGuideLHEInterface documentation.
+    AlgpenSource - is a special-purpose Source that belongs to the GeneratorInterface/AlpgenInterface packag. It converts Alpgen-generated partons to the edm::Event compatible format. We will not show its usage in this document but detailed information can be found in the dedicated SWGuideAlpgenInterface documentation.
+    PoolSource - is a general-purpose Framework Source that can read the content of a previously produced edm::Event file. Use case: you have generated your parton-level events with an ME tool, then have used LHESource to convert to the edm::Event compatible format, and have written an EDM output file; later on you can read these parton-level events with a PoolSource, and proceed to develop a fully hadronized event, followed by subsequent steps, as you choose. This scheme will also be the case in central production. Thus, if your intend to prepare cmsDriver.py compatible configuration fragments for central production, for processing ME partons, you will need to explicitly put PoolSource in your fragment (the exact input file to PoolSource will be specified via input argument to cmsDriver.py, detailes later or elsewhere). 
+            
+            

@@ -1,0 +1,45 @@
+Moikka,
+
+tätä allaolevaa voisit myö kokeilla harjoituksen vuoksi.
+Tässä olin siis "generoinut" simuloitua dataa.
+Tämä ei varsinaisesti liity mihinkään työvaiheeseen raakadatan kanssa, mutta jos raakadatatiedoston siirto eospublicille venyy, ja ei hetimiten päästä kokeilemaan saadanko sitä rekonstruoitua AOD-formaattiin, niin tämä vaiheen tuottaman tiedoston kanssa voi sitten "kuivaharjoitella" seuraavaa rekonstruktiovaihetta. Mutta ennen kuin siitä lisää, kokeile saatko tuon allaolevan toimimaan.
+
+terv. Kati
+From: Kati Lassila-Perini
+Sent: 01 February 2017 22:21
+To: Achim Geiser
+Subject: MC generation
+
+Dear Achim,
+
+I was finally too curious after our discussion, so I went to my VM and copied over the first configuration file for MC production for the dataset http://opendata.cern.ch/record/1393
+(linked after "Step SIM")
+
+cd CMSSW_5_3_32/src/
+mkdir Gen
+cd Gen
+wget http://opendata.cern.ch/record/3286/files/configFile.py
+cmsenv
+
+This first step, producing GEN-SIM (i.e. doing pythia event generation and simulation step) happily runs on 2011 Open Data VM when I first set the symbolic links to
+
+ln -sf /cvmfs/cms-opendata-conddb.cern.ch/START53_LV6A1 START53_LV6A1
+ln -sf /cvmfs/cms-opendata-conddb.cern.ch/START53_LV6A1.db START53_LV6A1.db
+
+and then run
+
+cmsRun configFile.py
+
+with this change of GlobalTag in the configFile.py:
+comment the following line
+process.GlobalTag = GlobalTag(process.GlobalTag, 'START53_LV4::All', '')
+
+and add these two lines:
+process.GlobalTag.connect = cms.string('sqlite_file:/cvmfs/cms-opendata-conddb.cern.ch/START53_LV6A1.db')
+process.GlobalTag.globaltag = cms.string('START53_LV6A1::All')
+
+This job produces a root file which I have not looked at in detail (but it opens and contains some reasonable looking collections but I really did not look in any detail to see whether it is OK or not). The global tag is not the one that is supposed to be but I wanted to try with the one that we have available (which may be a wrong thing to do).
+
+So this is not a proof of anything, it is only one part of the MC processing and I do not even know if the output is OK, but the fact that it runs with a minor change (which I understand) is still somewhat encouraging.
+
+Kind regards, Kati
